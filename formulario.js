@@ -1,8 +1,9 @@
-var formulario = document.querySelector("#form")
+var formulario = document.querySelector(".formulario")//se cambio a la clase de html
+var botonBorrar = document.createElement("button")// se subio esta variable
 
 formulario.onsubmit = function(e) {
 
-  e.prevent();
+  e.preventDefault();//se agrego deafault
   
   var n = formulario.elements[0]
   var e = formulario.elements[1]
@@ -30,7 +31,7 @@ if (nombre.length > 0
   }
 }
 
-var botonBorrar = document.createElement("button")
+
 botonBorrar.textContent = "Eliminar invitado"
 botonBorrar.id = "boton-borrar"
 var corteLinea = document.createElement("br")
@@ -55,7 +56,7 @@ function agregarInvitado(nombre, edad, nacionalidad) {
 var lista = document.getElementById("lista-de-invitados")
 
 var elementoLista = document.createElement("div")
-elementoLista.classList.added("elemento-lista")
+elementoLista.classList.add("elemento-lista")
 lista.appendChild(elementoLista)
 
 var spanNombre = document.createElement("span")
